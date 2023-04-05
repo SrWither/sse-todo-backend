@@ -39,7 +39,7 @@ pub async fn event_handler(res: &mut Response) {
     SseKeepAlive::new(stream).streaming(res).ok();
 }
 
-pub fn send_todo(my_id: usize, data: String) {
+pub fn send_event(my_id: usize, data: String) {
     let new_msg = format!("{data}");
     ONLINE_USERS.lock().retain(|uid, tx| {
         if my_id == *uid {

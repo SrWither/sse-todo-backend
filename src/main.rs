@@ -113,5 +113,5 @@ async fn main() {
             .get(events::event_handler)
         );
 
-    Server::new(TcpListener::bind("192.168.60.104:7878")).serve(router).await;
+    Server::new(TcpListener::bind("192.168.60.181:7878")).serve(router).await;
 }
